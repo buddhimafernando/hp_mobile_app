@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:hp_explore_mobile/presentation/screens/splash_screen.dart';
 
+import 'presentation/screens/landing_screen.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -15,7 +17,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: SplashScreen(),
+      home: LandingScreen(),
     );
   }
 }
