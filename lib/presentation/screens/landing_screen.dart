@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hp_explore_mobile/presentation/screens/home_screen.dart';
 import 'package:hp_explore_mobile/presentation/widgets/primary_button.dart';
 
 class LandingScreen extends StatelessWidget {
@@ -21,7 +22,15 @@ class LandingScreen extends StatelessWidget {
             // mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               SizedBox(height: MediaQuery.of(context).size.height * 0.75),
-              PrimaryButton(title: "Login", onPressed: () {}),
+              PrimaryButton(
+                title: "Login",
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => HomeScreen()),
+                  );
+                },
+              ),
               SizedBox(height: 15),
               PrimaryButton(
                 title: "Get Started",

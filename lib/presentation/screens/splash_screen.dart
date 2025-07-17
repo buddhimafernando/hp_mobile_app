@@ -1,7 +1,31 @@
 import 'package:flutter/material.dart';
+import 'package:hp_explore_mobile/presentation/screens/landing_screen.dart';
+import 'package:hp_explore_mobile/utils/routes.dart';
 
-class SplashScreen extends StatelessWidget {
+class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
+
+  @override
+  State<SplashScreen> createState() => _SplashScreenState();
+}
+
+class _SplashScreenState extends State<SplashScreen> {
+  @override
+  void initState() {
+    super.initState();
+    print("hi hi this works");
+    navigateToLogin();
+  }
+
+  void navigateToLogin() async {
+    Future.delayed(Duration(seconds: 3), () async {
+      print("hi hi this works >>>>>>>");
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => LandingScreen()),
+      );
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
