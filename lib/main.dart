@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:hp_explore_mobile/core/theme/theme.dart';
 import 'package:hp_explore_mobile/presentation/screens/splash_screen.dart';
 
 import 'presentation/screens/landing_screen.dart';
@@ -14,9 +16,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-      ),
+      theme: AppTheme.hogwartsTheme,
       home: SplashScreen(),
     );
   }
