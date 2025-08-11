@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hp_explore_mobile/presentation/screens/home_screen.dart';
+import 'package:hp_explore_mobile/presentation/screens/characters/characters_screen.dart';
 import 'package:hp_explore_mobile/presentation/widgets/primary_button.dart';
 
 class LandingScreen extends StatelessWidget {
@@ -27,7 +27,7 @@ class LandingScreen extends StatelessWidget {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => HomeScreen()),
+                    MaterialPageRoute(builder: (context) => CharactersScreen()),
                   );
                 },
               ),
