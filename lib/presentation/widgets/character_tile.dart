@@ -13,7 +13,6 @@ class CharacterTile extends StatelessWidget {
       constraints: BoxConstraints(
         maxWidth: MediaQuery.of(context).size.width * 0.41,
       ),
-
       child: Column(
         children: [
           ClipRRect(
@@ -21,7 +20,6 @@ class CharacterTile extends StatelessWidget {
             child: Image.network(
               image ??
                   "https://placeholderimagegenerator.com/wp-content/uploads/2024/12/Light-person-placeholder-round-corners_png_.png",
-
               fit: BoxFit.cover,
             ),
           ),
@@ -37,7 +35,6 @@ class CharacterTile extends StatelessWidget {
               fontWeight: FontWeight.bold,
               color: AppTheme.hogwartsTheme.hintColor,
             ),
-            // maxLines: 2,
             overflow: TextOverflow.clip,
             textAlign: TextAlign.center,
           ),
