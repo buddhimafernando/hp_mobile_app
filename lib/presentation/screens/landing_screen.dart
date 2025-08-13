@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:hp_explore_mobile/presentation/screens/characters/characters_screen.dart';
 import 'package:hp_explore_mobile/presentation/widgets/primary_button.dart';
 
+import '../bottom_navbar/bottom_navbar.dart';
+
 class LandingScreen extends StatelessWidget {
   const LandingScreen({super.key});
 
@@ -27,7 +29,7 @@ class LandingScreen extends StatelessWidget {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => CharactersScreen()),
+                    MaterialPageRoute(builder: (context) => BottomNavbar()),
                   );
                 },
               ),
