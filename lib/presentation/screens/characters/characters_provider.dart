@@ -11,7 +11,7 @@ class CharactersProvider extends ChangeNotifier {
   bool _isLoading = false;
   String? _error = "";
 
-  List<CharactersModel> get character => _characterList;
+  List<CharactersModel> get charactersList => _characterList;
   bool get isLoading => _isLoading;
   String? get error => _error;
 
@@ -23,15 +23,11 @@ class CharactersProvider extends ChangeNotifier {
 
     try {
       final response = await apiServices.getCharacters(character);
-      _characterList =
-          response
-              .map<CharactersModel>(
-                (json) =>
-                    CharactersModel.fromJson(json as Map<String, dynamic>),
-              )
-              .toList();
+      _characterList = response;
+      print(charactersList);
     } catch (e) {
       _error = e.toString();
+      print(_error);
     }
 
     _isLoading = false;

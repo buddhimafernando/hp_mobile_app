@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart';
+import 'package:hp_explore_mobile/data/models/characters_model/characters_model.dart';
 
 class APIServices {
   final Dio dio = Dio(
@@ -10,16 +11,19 @@ class APIServices {
   );
 
   // get characters
-  Future<List<dynamic>> getCharacters(String character) async {
+  Future<List<CharactersModel>> getCharacters(String? character) async {
     try {
       final response = await dio.get(
         "/characters",
         queryParameters: {"/search": character},
       );
-
-      print(response);
-      return response.data;
+      // print(response);
+      final data = response.data as List<dynamic>;
+      return data
+          .map((json) => CharactersModel.fromJson(json as Map<String, dynamic>))
+          .toList();
     } on DioException catch (e) {
+      print(e.toString());
       throw Exception("failed to return data");
     }
   }

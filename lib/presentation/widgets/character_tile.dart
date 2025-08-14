@@ -10,17 +10,19 @@ class CharacterTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      constraints: BoxConstraints(
-        maxWidth: MediaQuery.of(context).size.width * 0.41,
-      ),
+      // constraints: BoxConstraints(
+      //   maxWidth: MediaQuery.of(context).size.width * 0.41,
+      // ),
       child: Column(
         children: [
-          ClipRRect(
-            borderRadius: BorderRadius.circular(8),
-            child: Image.network(
-              image ??
-                  "https://placeholderimagegenerator.com/wp-content/uploads/2024/12/Light-person-placeholder-round-corners_png_.png",
-              fit: BoxFit.cover,
+          Expanded(
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(8),
+              child: Image.network(
+                image ??
+                    "https://placeholderimagegenerator.com/wp-content/uploads/2024/12/Light-person-placeholder-round-corners_png_.png",
+                fit: BoxFit.cover,
+              ),
             ),
           ),
           SizedBox(height: 10),

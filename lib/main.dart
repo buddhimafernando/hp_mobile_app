@@ -1,9 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:hp_explore_mobile/core/theme/theme.dart';
+import 'package:hp_explore_mobile/data/services/services.dart';
+import 'package:hp_explore_mobile/presentation/screens/characters/characters_provider.dart';
 import 'package:hp_explore_mobile/presentation/screens/splash/splash_screen.dart';
+import 'package:provider/provider.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(
+          create: (_) => CharactersProvider(apiServices: APIServices()),
+        ),
+      ],
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
