@@ -24,10 +24,8 @@ class CharactersProvider extends ChangeNotifier {
     try {
       final response = await apiServices.getCharacters(character);
       _characterList = response;
-      print(charactersList);
     } catch (e) {
       _error = e.toString();
-      print(_error);
     }
 
     _isLoading = false;

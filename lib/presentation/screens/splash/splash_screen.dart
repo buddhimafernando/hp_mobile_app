@@ -13,13 +13,11 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
-    print("hi hi this works");
     navigateToLogin();
   }
 
   void navigateToLogin() async {
     Future.delayed(Duration(seconds: 3), () async {
-      print("hi hi this works >>>>>>>");
       Navigator.push(
         context,
         MaterialPageRoute(builder: (context) => LandingScreen()),
