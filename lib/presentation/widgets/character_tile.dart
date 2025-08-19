@@ -27,11 +27,11 @@ class CharacterTile extends StatelessWidget {
           ),
           SizedBox(height: 10),
           Text(
-            title ?? "Title",
+            title ?? "",
             style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
           ),
           Text(
-            description ?? "Description",
+            description ?? "",
             style: TextStyle(
               fontSize: 14,
               fontWeight: FontWeight.bold,
