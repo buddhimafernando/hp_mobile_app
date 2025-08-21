@@ -2,7 +2,7 @@ class HousesModel {
   final String house;
   final String emoji;
   final String founder;
-  final List<String> colors;
+  final List<dynamic> colors;
   final String animal;
   final int index;
 

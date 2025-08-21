@@ -19,6 +19,7 @@ class HousesProvider extends ChangeNotifier {
     _isLoading = true;
     _error = null;
     notifyListeners();
+
     try {
       final response = await apiServices.getHouses();
       _housesModelList = response;

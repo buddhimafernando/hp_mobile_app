@@ -19,6 +19,12 @@ class _HousesScreenState extends State<HousesScreen> {
     super.initState();
   }
 
+  final List<String> housesLogos = [
+    "assets/images/gryffindor_logo.jpg",
+    "assets/images/slytherin.jpg",
+    "",
+  ];
+
   @override
   Widget build(BuildContext context) {
     final housesProvider = context.watch<HousesProvider>();
