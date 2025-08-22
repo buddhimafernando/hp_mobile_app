@@ -1,5 +1,3 @@
-import 'package:flutter/foundation.dart';
-
 class CharactersModel {
   final String fullName;
   final String nickname;

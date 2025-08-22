@@ -3,9 +3,18 @@ import 'package:hp_explore_mobile/core/theme/theme.dart';
 
 class CharacterTile extends StatelessWidget {
   final String? image;
+  final bool? isHouse;
+  final String? house;
   final String? title;
   final String? description;
-  const CharacterTile({super.key, this.image, this.title, this.description});
+  const CharacterTile({
+    super.key,
+    this.image,
+    this.title,
+    this.description,
+    this.isHouse = true,
+    this.house,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -18,11 +27,14 @@ class CharacterTile extends StatelessWidget {
           Expanded(
             child: ClipRRect(
               borderRadius: BorderRadius.circular(8),
-              child: Image.network(
-                image ??
-                    "https://placeholderimagegenerator.com/wp-content/uploads/2024/12/Light-person-placeholder-round-corners_png_.png",
-                fit: BoxFit.cover,
-              ),
+              child:
+                  isHouse!
+                      ? Image.network(
+                        image ??
+                            "https://placeholderimagegenerator.com/wp-content/uploads/2024/12/Light-person-placeholder-round-corners_png_.png",
+                        fit: BoxFit.cover,
+                      )
+                      : Image.asset(house ?? ""),
             ),
           ),
           SizedBox(height: 10),

@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:hp_explore_mobile/core/constants/image_paths/image_paths.dart';
 import 'package:hp_explore_mobile/presentation/screens/houses/houses_provider.dart';
 import 'package:hp_explore_mobile/presentation/widgets/character_tile.dart';
 import 'package:provider/provider.dart';
@@ -20,9 +21,10 @@ class _HousesScreenState extends State<HousesScreen> {
   }
 
   final List<String> housesLogos = [
-    "assets/images/gryffindor_logo.jpg",
-    "assets/images/slytherin.jpg",
-    "",
+    HouseLogoPaths.gryffindor,
+    HouseLogoPaths.hufflepuff,
+    HouseLogoPaths.ravenclaw,
+    HouseLogoPaths.slytherin,
   ];
 
   @override
@@ -57,8 +59,14 @@ class _HousesScreenState extends State<HousesScreen> {
                       itemCount: housesProvider.housesModelList.length,
                       itemBuilder: (context, index) {
                         final house = housesProvider.housesModelList[index];
+                        final image = house.house.toLowerCase();
+                        final logo =
+                            housesLogos[index] ??
+                            HouseLogoPaths.defaultHouseLogo;
+
                         return CharacterTile(
-                          image: house.house,
+                          isHouse: false,
+                          house: logo,
                           title: house.house,
                           // description: character.hogwartsHouse,
                         );
