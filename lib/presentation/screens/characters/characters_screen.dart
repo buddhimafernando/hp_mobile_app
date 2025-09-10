@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:hp_explore_mobile/presentation/screens/characters/characters_provider.dart';
 import 'package:hp_explore_mobile/presentation/widgets/character_tile.dart';
@@ -27,7 +28,7 @@ class _CharactersScreenState extends State<CharactersScreen> {
       appBar: AppBar(title: Text("Characters")),
       body:
           provider.isLoading
-              ? Center(child: CircularProgressIndicator())
+              ? Center(child: CupertinoActivityIndicator())
               : provider.error != null
               ? Center(child: Text(provider.error!))
               : SingleChildScrollView(

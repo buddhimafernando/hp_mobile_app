@@ -4,7 +4,7 @@ class BooksModel {
   final String originalTitle;
   final String releaseDate;
   final String description;
-  final String pages;
+  final int pages;
   final String cover;
   final int index;
 
@@ -21,14 +21,14 @@ class BooksModel {
 
   factory BooksModel.fromJson(Map<String, dynamic> json) {
     return BooksModel(
-      number: json['number'] as int,
+      number: json['number'],
       title: json['title'],
       originalTitle: json['originalTitle'],
       releaseDate: json['releaseDate'],
       description: json['description'],
       pages: json['pages'],
       cover: json['cover'],
-      index: json['index'] as int,
+      index: json['index'],
     );
   }
 }

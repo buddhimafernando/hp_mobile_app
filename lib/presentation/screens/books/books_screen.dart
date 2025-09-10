@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:hp_explore_mobile/presentation/screens/books/books_provider.dart';
 import 'package:provider/provider.dart';
@@ -26,10 +27,14 @@ class _BooksScreenState extends State<BooksScreen> {
       appBar: AppBar(title: Text("Books")),
       body:
           provider.isLoading
-              ? CircularProgressIndicator()
+              ? Center(child: CupertinoActivityIndicator())
               : provider.error != null
-              ? Text(provider.error!)
+              ? Center(child: Text(provider.error!))
               : SingleChildScrollView(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 15,
+                  vertical: 10,
+                ),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -50,7 +55,7 @@ class _BooksScreenState extends State<BooksScreen> {
                         return CharacterTile(
                           image: character.cover,
                           title: character.originalTitle,
-                          description: character.description,
+                          // description: character.description,
                         );
                       },
                     ),
