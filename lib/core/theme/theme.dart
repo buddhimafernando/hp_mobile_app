@@ -39,7 +39,7 @@ class AppTheme {
       ),
 
       bottomNavigationBarTheme: BottomNavigationBarThemeData(
-        backgroundColor: const Color(0xFF1B263B),
+        backgroundColor: const Color.fromRGBO(27, 38, 59, 1),
         selectedItemColor: Colors.white,
         unselectedItemColor: const Color(0xFFA9B4C2),
         showUnselectedLabels: true,
