@@ -2,6 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:hp_explore_mobile/data/models/books_model/books_model.dart';
 import 'package:hp_explore_mobile/data/models/characters_model/characters_model.dart';
 import 'package:hp_explore_mobile/data/models/houses_model/houses_model.dart';
+import 'package:hp_explore_mobile/data/models/spells_model/spells_model.dart';
 
 class APIServices {
   final Dio dio = Dio(
@@ -62,6 +63,20 @@ class APIServices {
       final data = response.data as List<dynamic>;
       return data
           .map((json) => BooksModel.fromJson(json as Map<String, dynamic>))
+          .toList();
+    } on DioException catch (e) {
+      throw Exception("failed to return data");
+    }
+  }
+
+  // get spells
+  Future<List<SpellsModel>> getSpells() async {
+    try {
+      final response = await dio.get("/spells");
+
+      final data = response.data as List<dynamic>;
+      return data
+          .map((json) => SpellsModel.fromjson(json as Map<String, dynamic>))
           .toList();
     } on DioException catch (e) {
       throw Exception("failed to return data");

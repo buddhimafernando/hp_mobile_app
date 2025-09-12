@@ -11,7 +11,7 @@ class SpellsProvider extends ChangeNotifier {
   bool _isLoading = false;
   String? _error = "";
 
-  List<SpellsModel> get spellsModel => _spellsModelList;
+  List<SpellsModel> get spellsModelList => _spellsModelList;
   bool get isLoading => _isLoading;
   String? get error => _error;
 
